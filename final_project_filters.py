@@ -14,10 +14,6 @@ import scipy
 from scipy import signal
 from scipy.io import wavfile
 
-#-------------------------------------------------------------------------------
-#                            QUESTION 1
-#-------------------------------------------------------------------------------
-
 #plots amplitude vs. time(samples), spectrogram and the FFT of unprocessed audio .wav file
 def analyze_audio(x):
     '''INPUT: "x" in quotations=audio file wanting to plot waveform/FFT
@@ -66,10 +62,6 @@ def analyze_audio(x):
     plt.savefig('FFT of {}.png'.format(audio_name))
 
 
-
-#-------------------------------------------------------------------------------
-#                            QUESTION 2
-#-------------------------------------------------------------------------------
 #LOWPASS FILTER
 def butter_lowpass(cutoff, fs, order):
     nyq = 0.5 * fs
@@ -251,9 +243,6 @@ def FIR_BPfilter(numtaps,audio,lowcut,highcut):
     wavfile.write('{} audioFIR_BPfilter.wav'.format(audio), sr, x.astype(np.int16))
 
 
-#-------------------------------------------------------------------------------
-#                            QUESTION 3
-#-------------------------------------------------------------------------------
 # get the waveform,spectrogram and FFT of audio clips
 # analyze_audio("Kickdrum5000Hz.wav")
 # analyze_audio(("violin90hz.wav"))
